@@ -1,29 +1,31 @@
+
 body {
-    background: #f2e6d9 url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background: #f2e6d9;
     font-family: 'Georgia', serif;
     color: #4b2e2e;
     padding: 20px;
-  }
-  
-  .container {
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+
+.container {
     max-width: 600px;
     margin: auto;
     padding: 30px;
     background-color: rgba(255, 248, 220, 0.9);
     border: 5px solid #8b5a2b;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
     text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-weight: bold;
     text-shadow: 1px 1px 2px #000;
-  }
-  
-  .name-input {
+}
+
+input.name-input {
     display: block;
     margin: 10px auto;
     padding: 10px;
@@ -32,35 +34,100 @@ body {
     border-radius: 5px;
     background-color: #fff8dc;
     width: 80%;
-  }
-  
-  button, .money-buttons button, .sign-toggle {
+}
+
+button {
     background-color: #8b5a2b;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 10px 4px 10px 0; /* Gestion des marges groupée */
+    margin: 10px;
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover, .money-buttons button:hover, .sign-toggle:hover {
+}
+
+button:hover {
     background-color: #a0522d;
-  }
-  
-  #result {
+}
+
+#result {
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+.name-input, .money-input {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.money-input {
+  width: 100px;
+  margin-left: 10px;
+}
+
+
+.player-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
   }
   
+  .name-input {
+    flex: 1;
+    padding: 8px;
+    font-size: 1em;
+    border: 2px solid #a97442;
+    border-radius: 8px;
+    background-color: #fff8f0;
+  }
+  
+  .money-display {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #4e2e1f;
+  }
+  
+  .money-display span {
+    margin-right: 6px;
+  }
+  
+  .money-value {
+    min-width: 80px;
+    text-align: right;
+    padding: 5px 8px;
+    background-color: #fff3e0;
+    border: 2px solid #a97442;
+    border-radius: 6px;
+  }
+  
+  .money-buttons button {
+    margin-left: 4px;
+    padding: 5px 8px;
+    border: none;
+    background-color: #dca86c;
+    color: #2e1d0f;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  .money-buttons button:hover {
+    background-color: #c68e54;
+  }
+  
+
   .player-entry {
     display: flex;
     align-items: center;
-    gap: 12px;
     margin-bottom: 10px;
+    gap: 12px;
     flex-wrap: wrap;
     border: 1px solid #ccc;
     padding: 10px;
@@ -69,11 +136,10 @@ body {
     max-width: 100%;
   }
   
-  .player-entry .name-input { /* Sélecteur plus spécifique */
+  .name-input {
     width: 200px;
     padding: 6px;
     font-size: 1rem;
-    margin: 0; /* Suppression de la marge automatique ici */
   }
   
   .money-display {
@@ -92,15 +158,74 @@ body {
     flex-wrap: wrap;
   }
   
-  .money-buttons button, .sign-toggle { /* Déjà stylés plus haut */
+  .money-buttons button,
+  .sign-toggle {
     padding: 4px 8px;
     font-size: 0.9rem;
     border-radius: 6px;
     border: 1px solid #aaa;
     background-color: #fff6e6;
-    color: #2e1d0f; /* Ajout de la couleur pour ces boutons */
+    cursor: pointer;
     transition: background-color 0.2s;
   }
+  
+  .money-buttons button:hover,
+  .sign-toggle:hover {
+    background-color: #fcd79b;
+  }
+
+  
+.player-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fef7ec;
+    max-width: 100%;
+  }
+  
+  .name-input {
+    width: 200px;
+    padding: 6px;
+    font-size: 1rem;
+  }
+  
+  .money-display {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 80px;
+    font-size: 1.1rem;
+  }
+  
+  .money-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .money-buttons button,
+  .sign-toggle {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    background-color: #fff6e6;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .money-buttons button:hover,
+  .sign-toggle:hover {
+    background-color: #fcd79b;
+  }
+  
   
   .result-table {
     width: 100%;
@@ -120,7 +245,8 @@ body {
     background-color: #f3dec0;
   }
   
-  .footer {
+
+.footer {
     margin-top: 40px;
     font-size: 0.9em;
     color: #5e3e2f;
@@ -128,4 +254,4 @@ body {
     text-align: center;
     border-top: 2px solid #8b5a2b;
     padding-top: 10px;
-  }
+}

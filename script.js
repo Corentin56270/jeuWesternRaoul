@@ -15,25 +15,16 @@ function addPlayer() {
 function assignRoles() {
   const isSixPlayers = document.getElementById("sixPlayersToggle").checked;
   const inputs = document.querySelectorAll(".name-input");
-  const names = Array.from(inputs)
-    .map(input => input.value.trim())
-    .filter(name => name !== "");
+  const names = Array.from(inputs).map(input => input.value.trim()).filter(name => name !== "");
 
-  const roles = isSixPlayers
-    ? allRoles.filter(r => r !== "Croque-mort")
-    : [...allRoles];
+  const roles = isSixPlayers ? allRoles.filter(r => r !== "Croque-mort") : [...allRoles];
 
   if (names.length !== roles.length || new Set(names).size !== names.length) {
-    document.getElementById("result").innerText =
-      "Erreur : entrez des noms uniques correspondant au nombre de rôles.";
+    document.getElementById("result").innerText = "Erreur : entrez des noms uniques correspondant au nombre de rôles.";
     return;
   }
 
-  const shuffledRoles = roles
-    .map(role => ({ role, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ role }) => role);
-
-  const assignments = names.map((name, i) => `${name} : ${shuffledRoles[i]}`);
+  const shuffledRoles = roles.sort(() => 0.5 - Math.random());
+  const assignments = names.map((name, i) => \`\${name} : \${shuffledRoles[i]}\`);
   document.getElementById("result").innerHTML = assignments.join("<br>");
 }
